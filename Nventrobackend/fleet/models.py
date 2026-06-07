@@ -14,8 +14,11 @@ class Vehicle(models.Model):
     vehicle_image = models.ImageField(upload_to='vehicles/', blank=True, null=True)
 
     vehicle_type = models.CharField(max_length=50)
-
-    current_mileage = models.PositiveIntegerField(default=0)
+    month = models.CharField(max_length=7, blank=True, null=True)  # Format: YYYY-MM
+    monthly_start_mileage = models.PositiveIntegerField(default=0)
+    monthly_end_mileage = models.PositiveIntegerField(default=0)
+    kt_number = models.CharField(max_length=50, blank=True, null=True)
+    remarks = models.TextField(blank=True, null=True)
 
     fuel_level = models.DecimalField(
         max_digits=5,
