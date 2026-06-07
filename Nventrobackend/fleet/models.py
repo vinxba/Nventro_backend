@@ -11,6 +11,7 @@ class Vehicle(models.Model):
     vehicle_name = models.CharField(max_length=100)
     vehicle_code = models.CharField(max_length=50, unique=True)
     plate_number = models.CharField(max_length=30)
+    vehicle_image = models.ImageField(upload_to='vehicles/', blank=True, null=True)
 
     vehicle_type = models.CharField(max_length=50)
 
